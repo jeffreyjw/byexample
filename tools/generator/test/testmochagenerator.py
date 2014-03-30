@@ -1,11 +1,11 @@
 import unittest
-from tools.generator.src.jasminegenerator import *
+from tools.generator.src.mochagenerator import *
 
 
-class TestJasmineGenerator(unittest.TestCase):
+class TestMochaGenerator(unittest.TestCase):
 
     def setUp(self):
-        self.generator = JasmineGenerator()
+        self.generator = MochaGenerator()
 
     def test_report(self):
         self.assertEqual(self.generator.report(), {"key":"value"})

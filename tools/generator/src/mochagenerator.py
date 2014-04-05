@@ -52,25 +52,38 @@ class MochaGenerator(Generator):
         is_in_tag = False
         tag = ""
         tag_line_number = 0
+        tag_head = False
         preg_open = re.compile(r"^\s*"+self.open_tag)
         preg_close = re.compile(r"^\s*"+self.close_tag)
         lines = data.split("\n")
+        article_titles = []
 
         line_number = 1
 
         for line in lines:
             if preg_open.match(line):
-                tag = line + "\n"
+                tag = ""
                 is_in_tag = True
-                tag_line_number = line_number
+                tag_head = True
+                article_titles = []
 
             elif preg_close.match(line):
                 name = self.find_test_name(tag, tests)
-                tags.append({"title": name, "code": tag, "line": tag_line_number})
+                tags.append({"title": name, "code": tag, "line": tag_line_number, "articles": article_titles})
                 is_in_tag = False
 
             elif is_in_tag:
                 tag += line + "\n"
+
+            if tag_head:
+                tag_line_number = line_number + 1
+
+                article_pos = line.find("@article")
+                if article_pos != -1:
+                    article_title = line[article_pos+8:].strip()
+                    article_titles.append(article_title)
+                else:
+                    tag_head = False
 
             line_number += 1
 
@@ -110,14 +123,33 @@ class MochaGenerator(Generator):
 
     def documentation_test_status(self, data):
 
-        for test in data["documentation"][0]:
-            for test_passed in data["passes"]:
-                if test["title"] == test_passed["title"]:
-                    test["status"] = "passed"
+        for test_file in data["documentation"]:
+            for test in test_file:
+                for test_passed in data["passes"]:
+                    if test["title"] == test_passed["title"]:
+                        test["status"] = "passed"
 
-            for test_failed in data["failures"]:
-                if test["title"] == test_failed["title"]:
-                    test["status"] = "failed"
+                for test_failed in data["failures"]:
+                    if test["title"] == test_failed["title"]:
+                        test["status"] = "failed"
+
+        return data
+
+
+    def generate_articles(self, data):
+        test_files = data["documentation"]
+        articles = {}
+
+        for test_file in test_files:
+            for test in test_file:
+                for article in test["articles"]:
+                    if article not in articles:
+                        articles[article] = []
+
+                    articles[article].append(test)
+
+        data["documentation"] = articles
+
 
         return data
 
@@ -129,5 +161,6 @@ class MochaGenerator(Generator):
         data["documentation"] = all_tags
 
         data = self.documentation_test_status(data)
+        data = self.generate_articles(data)
 
         return data

@@ -1,24 +1,23 @@
 <div class="clearfix">
     <div class="pull-left sidebar">
         <ul class="nav nav-stacked nav-pills">
-            <li><a href="">Something</a></li>
-            <li><a href="">Something</a></li>
-            <li><a href="">Something</a></li>
-            <li><a href="">Something</a></li>
-            <li><a href="">Something</a></li>
-            <li><a href="">Something</a></li>
-            <li><a href="">Something</a></li>
+            <li ng-repeat="(title, article) in documentation.documentation">
+                <a href="">{{title}}</a>
+            </li>
         </ul>
     </div>
     <div class="pull-right page-content">
-        <div ng-repeat="test in documentation.documentation[0]">
-            <h3>
-                <span class="label label-success" ng-show="test.status == 'passed'">PASSED</span>
-                <span class="label label-danger" ng-show="test.status == 'failed'">FAILED</span>
-                {{test.title}}
-            </h3>
-            <pretty-print code="{{test.code}}" language="js" linenumber="{{test.line}}">
-            </pretty-print>
+        <div ng-repeat="(article_title, article) in documentation.documentation">
+            <h1>{{article_title}}</h1>
+            <div ng-repeat="test in article">
+                <h3>
+                    <span class="label label-success" ng-show="test.status == 'passed'">PASSED</span>
+                    <span class="label label-danger" ng-show="test.status == 'failed'">FAILED</span>
+                    {{test.title}}
+                </h3>
+                <pretty-print code="{{test.code}}" language="js" linenumber="{{test.line}}">
+                </pretty-print>
+            </div>
         </div>
     </div>
 </div>

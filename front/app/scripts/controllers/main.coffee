@@ -4,6 +4,7 @@ angular.module('frontApp')
   .controller 'MainCtrl', ($scope, Backend, Prettify) ->
 
     $scope.documentation = {}
+    $scope.documentationArray = []
     $scope.selectedArticle = null
 
 
@@ -11,14 +12,19 @@ angular.module('frontApp')
       $scope.selectedArticle = title
 
 
+    $scope.documentationAsArray = () ->
+      $scope.documentationArray = []
+      for title of $scope.documentation.documentation
+        obj = { title: title, article: $scope.documentation.documentation[title] }
+        $scope.documentationArray.push obj
+
+
     $scope.init = () ->
       Backend.getDocumentation(
         (data) ->
           $scope.documentation = data
-
-          for article of $scope.documentation.documentation
-            $scope.selectedArticle = article
-            break
+          $scope.documentationAsArray()
+          $scope.selectedArticle = 0
 
           Prettify.run()
       )

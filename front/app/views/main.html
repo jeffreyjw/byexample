@@ -1,16 +1,18 @@
+<input type="text" class="form-control" placeholder="Search" ng-model="searchText" />
 <div class="clearfix">
     <div class="pull-left sidebar">
         <ul class="nav nav-stacked nav-pills">
-            <li ng-repeat="(title, article) in documentation.documentation" ng-class="{ active: selectedArticle == title }">
-                <a href="" ng-click="setArticle(title)">
-                    {{title}}
+            <li ng-repeat="article in documentationArray | filter:searchText"
+                ng-class="{ active: documentationArray[selectedArticle].title == article.title }">
+                <a href="" ng-click="setArticle($index)">
+                    {{article.title}}
                 </a>
             </li>
         </ul>
     </div>
     <div class="pull-right page-content">
-        <h1>{{selectedArticle}}</h1>
-        <div ng-repeat="test in documentation.documentation[selectedArticle]">
+        <h1>{{documentationArray[selectedArticle].title}}</h1>
+        <div ng-repeat="test in documentationArray[selectedArticle].article">
             <h3>
                 <span class="label label-success" ng-show="test.status == 'passed'">PASSED</span>
                 <span class="label label-danger" ng-show="test.status == 'failed'">FAILED</span>

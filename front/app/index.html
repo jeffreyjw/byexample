@@ -15,7 +15,7 @@
         <link rel="stylesheet" href="styles/main.css">
         <!-- endbuild -->
 </head>
-  <body ng-app="frontApp">
+  <body ng-app="frontApp" ng-controller="GlobalCtrl">
     <!--[if lt IE 7]>
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
@@ -27,9 +27,8 @@
 
     <div class="header container">
       <ul class="nav nav-pills pull-right">
-        <li class="active"><a ng-href="#">Home</a></li>
-        <li><a ng-href="#">About</a></li>
-        <li><a ng-href="#">Contact</a></li>
+        <li ng-class="{ active: location.path() == '/' }"><a ng-href="#/" >Documentation</a></li>
+        <li ng-class="{ active: location.path() == '/dashboard' }"><a ng-href="#/dashboard" >Dashboard</a></li>
       </ul>
       <h3 class="text-muted">ByExample</h3>
     </div>
@@ -86,6 +85,8 @@
         <script src="scripts/services/backend.js"></script>
         <script src="scripts/services/prettify.js"></script>
         <script src="scripts/directives/prettyPrint.js"></script>
+        <script src="scripts/controllers/dashboard.js"></script>
+        <script src="scripts/controllers/global.js"></script>
         <!-- endbuild -->
 
 </body>

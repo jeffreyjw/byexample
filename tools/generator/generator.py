@@ -6,7 +6,7 @@ def main():
     generator = MochaGenerator()
     report = generator.report()
 
-    json_str = json.dumps(report)
+    json_str = json.dumps(report, sort_keys=True, indent=4, separators=(',', ': '))
 
     f = open("documentation.json", "w")
     f.write(json_str)

@@ -38,6 +38,14 @@ class MochaGenerator(Generator):
             self._path = False
 
 
+    def find_test_name(self, code, tests):
+
+        for test in tests:
+            if code.find(test["title"]) != -1:
+                return test["title"]
+        return ""
+
+
     def get_tags_from_file(self, data, tests):
 
         tags = []
@@ -48,13 +56,13 @@ class MochaGenerator(Generator):
         lines = data.split("\n")
 
         for line in lines:
-            print is_in_tag
             if preg_open.match(line):
                 tag = line + "\n"
                 is_in_tag = True
 
             elif preg_close.match(line):
-                tags.append(tag)
+                name = self.find_test_name(tag, tests)
+                tags.append({name: tag})
                 is_in_tag = False
 
             elif is_in_tag:

@@ -11,9 +11,10 @@
         </ul>
     </div>
     <div class="pull-left page-content">
-        <pre class="prettyprint lang-js">
-            var f = {}
-            f["something"] = 4;
-        </pre>
+        <div ng-repeat="(title, code) in documentation.documentation[0][0]">
+            <h3>{{title}}</h3>
+            <pretty-print code="{{code}}" language="js">
+            </pretty-print>
+        </div>
     </div>
 </div>

@@ -1,0 +1,70 @@
+{
+    "coverage": 0,
+    "documentation": [
+        [
+            {
+                "should be equal to 5": "            //< @requires\n            it('should be equal to 5', function () {\n                expect(5).to.eql(5);\n            });\n"
+            }
+        ]
+    ],
+    "failures": [],
+    "files": [],
+    "hits": 0,
+    "instrumentation": "node-jscoverage",
+    "misses": 0,
+    "passes": [
+        {
+            "duration": 0,
+            "fullTitle": "Project suite Test numbers should be equal to 5",
+            "title": "should be equal to 5"
+        },
+        {
+            "duration": 0,
+            "fullTitle": "Project suite Test numbers should be equal to 4",
+            "title": "should be equal to 4"
+        },
+        {
+            "duration": 0,
+            "fullTitle": "Project suite Test numbers should be equal to 3",
+            "title": "should be equal to 3"
+        },
+        {
+            "duration": 0,
+            "fullTitle": "Project suite Test numbers Deeper should be equal to 6",
+            "title": "should be equal to 6"
+        }
+    ],
+    "sloc": 0,
+    "stats": {
+        "duration": 114,
+        "end": "2014-04-05T14:51:27.920Z",
+        "failures": 0,
+        "passes": 4,
+        "pending": 0,
+        "start": "2014-04-05T14:51:27.806Z",
+        "suites": 4,
+        "tests": 4
+    },
+    "tests": [
+        {
+            "duration": 0,
+            "fullTitle": "Project suite Test numbers should be equal to 5",
+            "title": "should be equal to 5"
+        },
+        {
+            "duration": 0,
+            "fullTitle": "Project suite Test numbers should be equal to 4",
+            "title": "should be equal to 4"
+        },
+        {
+            "duration": 0,
+            "fullTitle": "Project suite Test numbers should be equal to 3",
+            "title": "should be equal to 3"
+        },
+        {
+            "duration": 0,
+            "fullTitle": "Project suite Test numbers Deeper should be equal to 6",
+            "title": "should be equal to 6"
+        }
+    ]
+}

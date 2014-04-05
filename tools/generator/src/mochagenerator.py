@@ -72,7 +72,7 @@ class MochaGenerator(Generator):
                 tags.append({"title": name, "code": tag, "line": tag_line_number, "articles": article_titles})
                 is_in_tag = False
 
-            elif is_in_tag:
+            elif is_in_tag and not tag_head:
                 tag += line + "\n"
 
             if tag_head:
@@ -84,6 +84,8 @@ class MochaGenerator(Generator):
                     article_titles.append(article_title)
                 else:
                     tag_head = False
+                    tag_line_number = line_number
+                    tag += line + "\n"
 
             line_number += 1
 

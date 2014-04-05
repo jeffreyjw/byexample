@@ -7,8 +7,8 @@
                     "Numbers",
                     "Beginner"
                 ],
-                "code": "            // @article Beginner\n            it('should be equal to 5', function () {\n                expect(5).to.eql(7);\n            });\n",
-                "line": 20,
+                "code": "            it('should be equal to 5', function () {\n                expect(5).to.eql(7);\n            });\n",
+                "line": 19,
                 "status": "failed",
                 "title": "should be equal to 5"
             },
@@ -17,7 +17,7 @@
                     "Beginner"
                 ],
                 "code": "            it('should be equal to 4', function () {\n                expect(4).to.eql(4);\n            });\n",
-                "line": 26,
+                "line": 25,
                 "status": "passed",
                 "title": "should be equal to 4"
             }
@@ -28,7 +28,7 @@
                     "Numbers"
                 ],
                 "code": "                it('should be equal to 6', function () {\n                    expect(6).to.eql(6);\n                });\n",
-                "line": 12,
+                "line": 11,
                 "status": "passed",
                 "title": "should be equal to 6"
             },
@@ -37,8 +37,8 @@
                     "Numbers",
                     "Beginner"
                 ],
-                "code": "            // @article Beginner\n            it('should be equal to 5', function () {\n                expect(5).to.eql(7);\n            });\n",
-                "line": 20,
+                "code": "            it('should be equal to 5', function () {\n                expect(5).to.eql(7);\n            });\n",
+                "line": 19,
                 "status": "failed",
                 "title": "should be equal to 5"
             }
@@ -75,12 +75,12 @@
     ],
     "sloc": 0,
     "stats": {
-        "duration": 108,
-        "end": "2014-04-05T18:44:34.918Z",
+        "duration": 113,
+        "end": "2014-04-05T19:03:47.103Z",
         "failures": 1,
         "passes": 3,
         "pending": 0,
-        "start": "2014-04-05T18:44:34.810Z",
+        "start": "2014-04-05T19:03:46.990Z",
         "suites": 4,
         "tests": 4
     },

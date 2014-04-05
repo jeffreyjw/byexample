@@ -22,6 +22,26 @@
                 "title": "should be equal to 4"
             }
         ],
+        "Beginner booleans": [
+            {
+                "articles": [
+                    "Beginner booleans"
+                ],
+                "code": "            it('should be true', function () {\n                expect(true || false).to.eql(true);\n            });\n",
+                "line": 11,
+                "status": "passed",
+                "title": "should be true"
+            },
+            {
+                "articles": [
+                    "Beginner booleans"
+                ],
+                "code": "            it('should be false', function () {\n                expect(true && false).to.eql(false);\n            });\n",
+                "line": 17,
+                "status": "passed",
+                "title": "should be false"
+            }
+        ],
         "Numbers": [
             {
                 "articles": [
@@ -71,18 +91,28 @@
             "duration": 0,
             "fullTitle": "Project suite Test numbers Deeper should be equal to 6",
             "title": "should be equal to 6"
+        },
+        {
+            "duration": 0,
+            "fullTitle": "Project suite Test booleans should be true",
+            "title": "should be true"
+        },
+        {
+            "duration": 0,
+            "fullTitle": "Project suite Test booleans should be false",
+            "title": "should be false"
         }
     ],
     "sloc": 0,
     "stats": {
-        "duration": 113,
-        "end": "2014-04-05T19:03:47.103Z",
+        "duration": 109,
+        "end": "2014-04-05T20:36:50.807Z",
         "failures": 1,
-        "passes": 3,
+        "passes": 5,
         "pending": 0,
-        "start": "2014-04-05T19:03:46.990Z",
-        "suites": 4,
-        "tests": 4
+        "start": "2014-04-05T20:36:50.698Z",
+        "suites": 6,
+        "tests": 6
     },
     "tests": [
         {
@@ -103,6 +133,16 @@
             "duration": 0,
             "fullTitle": "Project suite Test numbers Deeper should be equal to 6",
             "title": "should be equal to 6"
+        },
+        {
+            "duration": 0,
+            "fullTitle": "Project suite Test booleans should be true",
+            "title": "should be true"
+        },
+        {
+            "duration": 0,
+            "fullTitle": "Project suite Test booleans should be false",
+            "title": "should be false"
         }
     ]
 }

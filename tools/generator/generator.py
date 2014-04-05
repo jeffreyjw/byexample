@@ -12,6 +12,10 @@ def main():
     f.write(json_str)
     f.close()
 
+    f = open("../../front/app/documentation.json", "w")
+    f.write(json_str)
+    f.close()
+
     return
 
 if __name__ == "__main__":

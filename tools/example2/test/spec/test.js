@@ -14,7 +14,7 @@ var expect = expect || {};
                 //>
             });
 
-            //< @article Numbers
+            //<@article Numbers
             // @article Beginner
             it('should be equal to 5', function () {
                 expect(5).to.eql(7);

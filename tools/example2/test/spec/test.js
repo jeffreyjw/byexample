@@ -16,7 +16,7 @@ var expect = expect || {};
 
             //< @requires
             it('should be equal to 5', function () {
-                expect(5).to.eql(5);
+                expect(5).to.eql(7);
             });
             //>
 

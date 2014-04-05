@@ -5,36 +5,42 @@
             {
                 "code": "                //<\n                it('should be equal to 6', function () {\n                    expect(6).to.eql(6);\n                });\n",
                 "line": 10,
+                "status": "passed",
                 "title": "should be equal to 6"
             },
             {
-                "code": "            //< @requires\n            it('should be equal to 5', function () {\n                expect(5).to.eql(5);\n            });\n",
+                "code": "            //< @requires\n            it('should be equal to 5', function () {\n                expect(5).to.eql(7);\n            });\n",
                 "line": 17,
+                "status": "failed",
                 "title": "should be equal to 5"
             },
             {
                 "code": "            //<\n            it('should be equal to 4', function () {\n                expect(4).to.eql(4);\n            });\n",
                 "line": 23,
+                "status": "passed",
                 "title": "should be equal to 4"
             },
             {
                 "code": "            //<\n            it('should be equal to 3', function () {\n                expect(3).to.eql(3);\n            });\n",
                 "line": 29,
+                "status": "passed",
                 "title": "should be equal to 3"
             }
         ]
     ],
-    "failures": [],
+    "failures": [
+        {
+            "errMess": "expected 5 to deeply equal 7",
+            "errStack": "expected 5 to deeply equal 7\n    at http://127.0.0.1:9077/lib/chai.js:243\n    at http://127.0.0.1:9077/lib/chai.js:679\n    at http://127.0.0.1:9077/lib/chai.js:2724\n    at http://127.0.0.1:9077/spec/test.js:19\n    at http://127.0.0.1:9077/lib/mocha/mocha.js:4047\n    at http://127.0.0.1:9077/lib/mocha/mocha.js:4404\n    at http://127.0.0.1:9077/lib/mocha/mocha.js:4463\n    at next (http://127.0.0.1:9077/lib/mocha/mocha.js:4330)\n    at http://127.0.0.1:9077/lib/mocha/mocha.js:4339\n    at next (http://127.0.0.1:9077/lib/mocha/mocha.js:4287)\n    at http://127.0.0.1:9077/lib/mocha/mocha.js:4307\n    at http://127.0.0.1:9077/lib/mocha/mocha.js:5259",
+            "fullTitle": "Project suite Test numbers should be equal to 5",
+            "title": "should be equal to 5"
+        }
+    ],
     "files": [],
     "hits": 0,
     "instrumentation": "node-jscoverage",
     "misses": 0,
     "passes": [
-        {
-            "duration": 0,
-            "fullTitle": "Project suite Test numbers should be equal to 5",
-            "title": "should be equal to 5"
-        },
         {
             "duration": 0,
             "fullTitle": "Project suite Test numbers should be equal to 4",
@@ -53,18 +59,17 @@
     ],
     "sloc": 0,
     "stats": {
-        "duration": 117,
-        "end": "2014-04-05T16:32:02.905Z",
-        "failures": 0,
-        "passes": 4,
+        "duration": 109,
+        "end": "2014-04-05T16:53:34.055Z",
+        "failures": 1,
+        "passes": 3,
         "pending": 0,
-        "start": "2014-04-05T16:32:02.788Z",
+        "start": "2014-04-05T16:53:33.946Z",
         "suites": 4,
         "tests": 4
     },
     "tests": [
         {
-            "duration": 0,
             "fullTitle": "Project suite Test numbers should be equal to 5",
             "title": "should be equal to 5"
         },

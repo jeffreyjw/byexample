@@ -108,10 +108,26 @@ class MochaGenerator(Generator):
         return json.loads(data)
 
 
+    def documentation_test_status(self, data):
+
+        for test in data["documentation"][0]:
+            for test_passed in data["passes"]:
+                if test["title"] == test_passed["title"]:
+                    test["status"] = "passed"
+
+            for test_failed in data["failures"]:
+                if test["title"] == test_failed["title"]:
+                    test["status"] = "failed"
+
+        return data
+
+
     def report(self):
         data = self.read_json_report()
         all_tags = self.read_documentation_tags(data["tests"])
 
         data["documentation"] = all_tags
+
+        data = self.documentation_test_status(data)
 
         return data

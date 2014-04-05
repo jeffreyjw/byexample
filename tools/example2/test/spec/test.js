@@ -7,9 +7,11 @@ var expect = expect || {};
     describe('Project suite', function () {
         describe('Test numbers', function () {
             describe('Deeper', function () {
+                //<
                 it('should be equal to 6', function () {
                     expect(6).to.eql(6);
                 });
+                //>
             });
 
             //< @requires
@@ -18,12 +20,17 @@ var expect = expect || {};
             });
             //>
 
+            //<
             it('should be equal to 4', function () {
                 expect(4).to.eql(4);
             });
+            //>
+
+            //<
             it('should be equal to 3', function () {
                 expect(3).to.eql(3);
             });
+            //>
         });
     });
 })();

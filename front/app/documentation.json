@@ -3,7 +3,24 @@
     "documentation": [
         [
             {
-                "should be equal to 5": "            //< @requires\n            it('should be equal to 5', function () {\n                expect(5).to.eql(5);\n            });\n"
+                "code": "                //<\n                it('should be equal to 6', function () {\n                    expect(6).to.eql(6);\n                });\n",
+                "line": 10,
+                "title": "should be equal to 6"
+            },
+            {
+                "code": "            //< @requires\n            it('should be equal to 5', function () {\n                expect(5).to.eql(5);\n            });\n",
+                "line": 17,
+                "title": "should be equal to 5"
+            },
+            {
+                "code": "            //<\n            it('should be equal to 4', function () {\n                expect(4).to.eql(4);\n            });\n",
+                "line": 23,
+                "title": "should be equal to 4"
+            },
+            {
+                "code": "            //<\n            it('should be equal to 3', function () {\n                expect(3).to.eql(3);\n            });\n",
+                "line": 29,
+                "title": "should be equal to 3"
             }
         ]
     ],
@@ -36,12 +53,12 @@
     ],
     "sloc": 0,
     "stats": {
-        "duration": 114,
-        "end": "2014-04-05T14:51:27.920Z",
+        "duration": 117,
+        "end": "2014-04-05T16:32:02.905Z",
         "failures": 0,
         "passes": 4,
         "pending": 0,
-        "start": "2014-04-05T14:51:27.806Z",
+        "start": "2014-04-05T16:32:02.788Z",
         "suites": 4,
         "tests": 4
     },

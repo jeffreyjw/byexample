@@ -11,9 +11,9 @@
         </ul>
     </div>
     <div class="pull-left page-content">
-        <div ng-repeat="(title, code) in documentation.documentation[0][0]">
-            <h3>{{title}}</h3>
-            <pretty-print code="{{code}}" language="js">
+        <div ng-repeat="test in documentation.documentation[0]">
+            <h3>{{test.title}}</h3>
+            <pretty-print code="{{test.code}}" language="js" linenumber="{{test.line}}">
             </pretty-print>
         </div>
     </div>

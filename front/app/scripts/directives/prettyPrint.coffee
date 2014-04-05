@@ -5,7 +5,10 @@ angular.module('frontApp')
     template: '<pre></pre>'
     restrict: 'E'
     link: (scope, element, attrs) ->
-      preElement = Prettify.one(attrs.code, attrs.language, 2)
+      lineNumber = false
+      if attrs.linenumber
+        lineNumber = parseInt(attrs.linenumber)
+      preElement = Prettify.one(attrs.code, attrs.language, lineNumber)
 
       element.find("pre").append(preElement)
   )

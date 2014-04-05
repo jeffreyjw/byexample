@@ -51,22 +51,28 @@ class MochaGenerator(Generator):
         tags = []
         is_in_tag = False
         tag = ""
+        tag_line_number = 0
         preg_open = re.compile(r"^\s*"+self.open_tag)
         preg_close = re.compile(r"^\s*"+self.close_tag)
         lines = data.split("\n")
+
+        line_number = 1
 
         for line in lines:
             if preg_open.match(line):
                 tag = line + "\n"
                 is_in_tag = True
+                tag_line_number = line_number
 
             elif preg_close.match(line):
                 name = self.find_test_name(tag, tests)
-                tags.append({name: tag})
+                tags.append({"title": name, "code": tag, "line": tag_line_number})
                 is_in_tag = False
 
             elif is_in_tag:
                 tag += line + "\n"
+
+            line_number += 1
 
         return tags
 
